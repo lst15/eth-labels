@@ -24,7 +24,7 @@ app.get(
   "/labels/:address",
   async ({ params }) => {
     const { address } = params;
-    return selectMatchingLabels(address);
+    return selectMatchingLabels(address as never);
   },
   { params: t.Object({ address: t.String() }) },
 );
