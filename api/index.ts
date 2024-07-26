@@ -1,6 +1,6 @@
 import { swagger } from "@elysiajs/swagger";
 import { Elysia, t } from "elysia";
-import { selectAllLabels } from "./services/select-all-labels";
+import { selectAllAccounts, selectAllLabels } from "./services/select-all-labels";
 import { selectMatchingLabels } from "./services/select-matching-labels";
 
 const PORT = process.env.PORT || 3000;
@@ -20,6 +20,10 @@ app.use(
 app.get("/labels", () => {
   return selectAllLabels();
 });
+app.get("/accounts", () => {
+  return selectAllAccounts();
+});
+
 app.get(
   "/labels/:address",
   async ({ params }) => {

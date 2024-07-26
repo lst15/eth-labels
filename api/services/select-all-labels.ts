@@ -10,3 +10,7 @@ export const selectAllLabels = async (): Promise<ReadonlyArray<string>> => {
   // deduplicate repeats
   return Array.from(new Set(sortedLabels));
 };
+
+export const selectAllAccounts = async () => {
+  return await AccountsRepository.selectAllAccounts()
+};
